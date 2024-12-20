@@ -1,0 +1,17 @@
+﻿@page
+@model KitsApp.Pages.Forms.CustomKitModel
+@{
+}
+
+<div class="text-center container">
+	<h1>Create your own Kit</h1>
+    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 bg-light col-4">
+        <input type="text" asp-for="Kit.KitName" placeholder="Give Your Kit a Name..." />
+        <br />
+        <input type="text" asp-for="Kit.KitNumber" placeholder="Give Your Kit a Number..." />
+        <br />
+        <input type="checkbox" asp-for="Kit.Badge" placeholder="Badge" />Badge
+        <br />
+		<button class="btn btn-primary m-1" type="submit">Order my Kit</button>
+	</form>
+</div>

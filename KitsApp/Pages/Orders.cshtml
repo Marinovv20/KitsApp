@@ -1,0 +1,39 @@
+﻿@page
+@model KitsApp.Pages.OrdersModel
+@{
+    ViewData["Title"] = "Your Orders";
+}
+
+<h1 class="text-center">Your Orders</h1>
+<hr />
+
+@if (!Model.KitOrders.Any())
+{
+    <div class="alert alert-info text-center">
+        <p>You have no orders to display. Please place an order to view it here.</p>
+    </div>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Kit Name</th>
+                <th>Kit Number</th>
+                <th>Price ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.KitOrders)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.KitName</td>
+                    <td>@order.KitNumber</td>
+                    <td>@order.BasePrice.ToString("F2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
