@@ -10,54 +10,55 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg" style="background-color: #e0e0e0; border-bottom: 1px solid #d6d6d6; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src="~/images/Logo.png" alt="KitsApp" width="50" height="50" class="d-inline-block align-text-center">
-                    KitsApp</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-page="/Index" style="color: #444;">
+                    <img src="~/images/Logo.png" alt="Va1s Kits" width="40" height="40" class="me-2">
+                    <span style="font-size: 1.25rem; font-weight: bold;">Vals Kits</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav ms-auto">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="btn btn-outline-dark me-2" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Kit">Kits</a>
+                            <a class="btn btn-outline-dark me-2" asp-area="" asp-page="/Kit">Kits</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Orders">Orders</a>
+                            <a class="btn btn-outline-dark me-2" asp-area="" asp-page="/Orders">Orders</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav">
                         @{
                             var username = Context.Session.GetString("Username");
                         }
                         @if (username != null)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Index">Welcome, @username</a>
+                                <span class="navbar-text me-3" style="color: #444;">Welcome, @username</span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
+                                <a class="btn btn-danger me-2" asp-area="" asp-page="/Account/Logout">Logout</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
+                                <a class="btn btn-outline-dark me-2" asp-area="" asp-page="/Account/Login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Account/Register">Register</a>
+                                <a class="btn btn-outline-dark" asp-area="" asp-page="/Account/Register">Register</a>
                             </li>
                         }
-</ul>
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
