@@ -49,6 +49,44 @@ namespace KitsApp.Migrations
                     b.ToTable("KitOrders");
                 });
 
+            modelBuilder.Entity("KitsApp.Models.KitsModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Badge")
+                        .HasColumnType("bit");
+
+                    b.Property<float>("BasePrice")
+                        .HasColumnType("real");
+
+                    b.Property<float>("FinalPrice")
+                        .HasColumnType("real");
+
+                    b.Property<string>("ImageTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KitName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KitNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("League")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Kits");
+                });
+
             modelBuilder.Entity("KitsApp.Models.User", b =>
                 {
                     b.Property<int>("Id")

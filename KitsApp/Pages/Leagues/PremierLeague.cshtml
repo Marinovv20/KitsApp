@@ -1,0 +1,37 @@
+﻿@page
+@model KitsApp.Pages.Leagues.PremierLeagueModel
+@{
+    ViewData["Title"] = "PremierLeague Kits";
+}
+
+<div class="container">
+    <div class="text-center mb-5">
+        <h2 class="text-capitalize text-dark mt-5">Premier League Kits</h2>
+        <p class="lead text-muted">Explore the Premier League kits collection!</p>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var kit in Model.Kits)
+        {
+            var imagePath = Url.Content("~/images/Kits/" + kit.ImageTitle + ".png");
+
+            <div class="col-md-4">
+                <div class="card kit-card h-100 shadow-lg border-0">
+                    <a class="kit-img text-decoration-none" asp-area=""
+                       asp-page="/Checkout/Checkout"
+                       asp-route-KitName="@kit.KitName"
+                       asp-route-KitNumber="@kit.KitNumber"
+                       asp-route-ImageTitle="@kit.ImageTitle"
+                       asp-route-KitPrice="@kit.FinalPrice">
+
+                        <img src="@imagePath" class="card-img-top img-fluid kit-image" alt="@kit.KitName">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-dark text-uppercase">@kit.KitName</h5>
+                        <p class="card-text text-muted">@kit.FinalPrice.ToString("C")</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

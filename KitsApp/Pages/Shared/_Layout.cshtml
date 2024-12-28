@@ -35,12 +35,13 @@
                                 Leagues
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="~/League/PremierLeague">Premier League</a></li>
-                                <li><a class="dropdown-item" href="~/League/EFL">EFL</a></li>
-                                <li><a class="dropdown-item" href="~/League/LaLiga">LaLiga</a></li>
-                                <li><a class="dropdown-item" href="~/League/Bundesliga">Bundesliga</a></li>
-                                <li><a class="dropdown-item" href="~/League/Ligue1">Ligue 1</a></li>
-                                <li><a class="dropdown-item" href="~/League/SerieA">Serie A</a></li>
+                                <a class="dropdown-item" asp-page="/Leagues/PremierLeague" asp-route-league="PremierLeague">Premier League</a>
+                                <a class="dropdown-item" asp-page="/Leagues/EFL" asp-route-league="EFL">EFL</a>
+                                <a class="dropdown-item" asp-page="/Leagues/LaLiga" asp-route-league="LaLiga">LaLiga</a>
+                                <a class="dropdown-item" asp-page="/Leagues/Bundesliga" asp-route-league="Bundesliga">Bundesliga</a>
+                                <a class="dropdown-item" asp-page="/Leagues/Ligue1" asp-route-league="Ligue1">Ligue 1</a>
+                                <a class="dropdown-item" asp-page="/Leagues/SerieA" asp-route-league="SerieA">Serie A</a>
+
                             </ul>
                         </li>
                     </ul>
