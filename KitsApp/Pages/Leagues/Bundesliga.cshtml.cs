@@ -14,6 +14,8 @@ namespace KitsApp.Pages.Leagues
             new KitsModel { ImageTitle = "BayernMunich", KitName = "Bayern Munich", KitNumber = "10", BasePrice = 50, Badge = true, FinalPrice = 52, League = "Bundesliga" },
             new KitsModel { ImageTitle = "BVB", KitName = "BVB", KitNumber = "7", BasePrice = 50, Badge = true, FinalPrice = 52, League = "Bundesliga" },
             new KitsModel { ImageTitle = "BayerLeverkusen", KitName = "Bayer Leverkusen", KitNumber = "7", BasePrice = 50, Badge = true, FinalPrice = 52, League = "Bundesliga" },
+            new KitsModel { ImageTitle = "RBLeipzig", KitName = "RB Leipzig", KitNumber = "7", BasePrice = 50, Badge = true, FinalPrice = 52, League = "Bundesliga" },
+            new KitsModel { ImageTitle = "EintrachtFrankfurt", KitName = "Eintracht Frankfurt", KitNumber = "7", BasePrice = 50, Badge = true, FinalPrice = 52, League = "Bundesliga" },
         };
 
         public void OnGet()
