@@ -1,4 +1,3 @@
-
 using KitsApp.Data;
 using KitsApp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -6,23 +5,23 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace KitsApp.Pages.Checkout
 {
-	[BindProperties(SupportsGet = true)]
+    [BindProperties(SupportsGet = true)]
     public class CheckoutModel : PageModel
     {
-		public string KitName { get; set; }
-		public string KitNumber { get; set; }
-		public float KitPrice { get; set; }
-		public string ImageTitle { get; set; }
+        public string KitName { get; set; }
+        public string KitNumber { get; set; }
+        public float KitPrice { get; set; }
+        public string ImageTitle { get; set; }
 
 
-		private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-		public CheckoutModel(ApplicationDbContext context)
-		{
-			_context = context;
-		}
+        public CheckoutModel(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
-		public void OnGet()
+        public void OnGet()
         {
             var username = HttpContext.Session.GetString("Username");
             if (string.IsNullOrWhiteSpace(username))
@@ -32,24 +31,24 @@ namespace KitsApp.Pages.Checkout
             }
 
             if (string.IsNullOrWhiteSpace(KitName))
-			{
-				KitName = "Custom";
-			}
-			if (string.IsNullOrWhiteSpace(ImageTitle))
-			{
-				ImageTitle = "Custom";
-			}
+            {
+                KitName = "Custom";
+            }
+            if (string.IsNullOrWhiteSpace(ImageTitle))
+            {
+                ImageTitle = "Custom";
+            }
 
             var kitOrder = new KitOrder
             {
                 KitName = KitName,
                 KitNumber = KitNumber,
                 BasePrice = KitPrice,
-                Username = username 
+                Username = username
             };
 
             _context.KitOrders.Add(kitOrder);
-			_context.SaveChanges();
-		}
+            _context.SaveChanges();
+        }
     }
 }
